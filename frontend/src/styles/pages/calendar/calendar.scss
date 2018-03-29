@@ -21,7 +21,7 @@ $calendarPhoneWidth: 809px;
   .ct-page-header {
     position: fixed !important;
     width: calc(100% - 40px);
-    background: white;
+    background: $gray-page-background;
     z-index: 995;
 
     &:before {
@@ -29,7 +29,7 @@ $calendarPhoneWidth: 809px;
       content: '';
       width: 100%;
       height: 20px;
-      background: white;
+      background: $gray-page-background;
       top: -20px;
     }
 
@@ -38,7 +38,7 @@ $calendarPhoneWidth: 809px;
       content: '';
       width: 100%;
       height: 10px;
-      background: white;
+      background: $gray-page-background;
       bottom: -10px;
       left: 0;
     }
@@ -88,10 +88,12 @@ $calendarPhoneWidth: 809px;
   .ct-calendar-projects {
     float: right;
     width: 250px;
+    background: white;
 
     .ct-multiselect {
       border: none !important;
       position: relative;
+      padding: 5px 10px;
 
       .ct-select {
         height: 27px;
@@ -126,7 +128,7 @@ $calendarPhoneWidth: 809px;
 
         .mat-select-value-text {
           font-family: inherit;
-          line-height: 28px;
+          line-height: 19px;
         }
       }
 
