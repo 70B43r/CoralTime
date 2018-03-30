@@ -93,10 +93,12 @@ $calendarPhoneWidth: 809px;
     .ct-multiselect {
       border: none !important;
       position: relative;
-      padding: 5px 10px;
+      padding: 0 10px;
 
       .ct-select {
-        height: 27px;
+        height: 30px;
+        position: relative;
+        right: 20px;
       }
     }
 
@@ -290,7 +292,6 @@ $calendarPhoneWidth: 809px;
       .ct-calendar-task {
         font-family: inherit;
         display: inline-block;
-        margin-top: 5px;
         font-size: $baseFont;
 
         .ct-lock-icon {
@@ -788,8 +789,8 @@ $calendarPhoneWidth: 809px;
 .ct-calendar-multiselect.ui-multiselect-panel > div {
   position: fixed;
   z-index: 996 !important;
-  top: 97px !important;
-  right: 20px;
+  top: 102px !important;
+  right: 19px;
   left: auto !important;
   font-family: inherit;
 }

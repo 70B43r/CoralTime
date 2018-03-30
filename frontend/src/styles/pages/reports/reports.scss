@@ -40,6 +40,20 @@ $fieldHeight: 30px;
   }
 
   .ct-reports-grid {
+    .ui-cell-data {
+      line-height: 15px !important;
+      font-size: 13px !important;
+    }
+
+    .ct-actual-label {
+      background: #f2826e;
+      color: #ffffff;
+      padding: 2px 4px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
     .ct-total-time-container {
       margin: -12px 0 0;
 
@@ -450,7 +464,7 @@ $fieldHeight: 30px;
     .ui-datatable-tablewrapper table {
 
       thead {
-        border-top: 2px solid $border-сolor;
+        border-top: 0;
         border-bottom: 2px solid $border-сolor;
 
         th {
@@ -496,7 +510,6 @@ $fieldHeight: 30px;
   ct-range-datepicker {
     position: absolute;
     top: 51px;
-    right: 210px;
     width: 280px;
     text-align: center;
     background: #fff;

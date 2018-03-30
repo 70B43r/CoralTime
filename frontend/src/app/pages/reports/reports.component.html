@@ -106,12 +106,15 @@
                     <i class="fa fa-times"></i>
                     Reset
                 </span>
+
+
                 <div class="ct-reports-time-period mat-button-ripple mat-ripple ct-button mat-raised-button ct-white-button">
                     <i class="fa fa-plus"></i> <span class="ct-default-text">Queries</span>
                 </div>
+
                 <div class="ct-reports-settings">
                     <div class="ct-reports-actions-block">
-                        <div class="ct-reports-time-period mat-button-ripple mat-ripple ct-button ct-white-button mat-raised-button">
+                        <div class="ct-reports-time-period ct-button ct-white-button mat-raised-button">
                             <a class="ct-prev" (click)="getNewPeriod(false)"></a>
                             <div>
                                 <i class="fa fa-calendar"></i>
@@ -130,6 +133,30 @@
                                              (closed)="toggleRangeDatepicker()"></ct-range-datepicker>
                     </div>
                 </div>
+
+                <!--<div class="ct-reports-settings">-->
+                <!--<div class="ct-reports-actions-block">-->
+                <!--<div class="ct-reports-time-period mat-button-ripple mat-ripple ct-button ct-white-button mat-raised-button">-->
+                <!--<a class="ct-prev" (click)="getNewPeriod(false)"></a>-->
+                <!--<div>-->
+                <!--<i class="fa fa-calendar"></i>-->
+                <!--<span class="ct-default-text" (click)="toggleRangeDatepicker()">{{dateString}}</span>-->
+                <!--<i *ngIf="isDatepickerShown" class="fa fa-times" (click)="cancelUpdatingReportGrid()"></i>-->
+                <!--<i *ngIf="!isDatepickerShown" class="fa fa-sort-desc" (click)="toggleRangeDatepicker()"></i>-->
+                <!--</div>-->
+                <!--<a class="ct-next" (click)="getNewPeriod()"></a>-->
+                <!--</div>-->
+                <!--<ct-range-datepicker *ngIf="isDatepickerShown"-->
+                <!--[class.ct-datepicker-opened]="isDatepickerAnimating"-->
+                <!--[datePeriod]="datePeriod"-->
+                <!--[firstDayOfWeek]="firstDayOfWeek"-->
+                <!--(clickOutside)="toggleRangeDatepicker($event)"-->
+                <!--(onPeriodChanged)="datePeriodOnChange($event)"-->
+                <!--(closed)="toggleRangeDatepicker()"></ct-range-datepicker>-->
+                <!--</div>-->
+                <!--</div>-->
+
+
             </div>
         </div>
 
