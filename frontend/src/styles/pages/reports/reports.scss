@@ -46,7 +46,7 @@ $fieldHeight: 30px;
     }
 
     .ct-actual-label {
-      background: #f2826e;
+      background: #66b2cc;
       color: #ffffff;
       padding: 2px 4px;
       border-radius: 5px;
@@ -80,11 +80,13 @@ $fieldHeight: 30px;
 
   .ct-page-container .ct-page-header {
     height: auto;
-    min-height: 70px;
+    min-height: 46px;
     position: fixed;
     z-index: 995;
-    background: $gray-page-background;
-    width: calc(100% - 40px);
+    background: white;
+    width: 61%;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+
     &:before {
       content: '';
       position: absolute;
@@ -100,15 +102,14 @@ $fieldHeight: 30px;
   }
 
   .ct-white-button {
-    float: right;
     background: #ffffff;
     color: $nav-link-border !important;
+    border: 1px solid #dfdfdf;
   }
 
   .ct-gray-button {
     background: #dfdfdf;
-    float: right;
-    top: 19px;
+    border: 1px solid #dfdfdf;
   }
 
   .ct-reports-settings {
@@ -116,7 +117,6 @@ $fieldHeight: 30px;
     height: 30px;
     line-height: 30px;
     display: inline-block;
-    float: right;
 
     .ct-reports-actions-block {
       position: relative;
@@ -195,6 +195,24 @@ $fieldHeight: 30px;
     }
   }
 
+  .ct-collapsed-menu-footer {
+    margin-top: 20px;
+  }
+
+  .ct-reports-reset-link {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+
+    span {
+      text-decoration: none;
+      border-bottom: 2px dotted;
+    }
+  }
+
   .ct-reports-time-period {
     position: relative;
     height: 30px;
@@ -253,11 +271,15 @@ $fieldHeight: 30px;
 
   .ct-btn-block {
     height: 24px;
-    border-left: 1px solid $border-сolor;
-    right: 36%;
-    position: absolute;
-    top: 43px;
-    margin-right: 10px;
+    width: 49%;
+    display: inline-block;
+    position: relative;
+    top: 9px;
+    //border-left: 1px solid $border-сolor;
+    //right: 36%;
+    //position: absolute;
+    //top: 43px;
+    //margin-right: 10px;
 
     [class *="-button"] {
       position: relative;
@@ -276,6 +298,7 @@ $fieldHeight: 30px;
 
     .ct-columns-multiselect {
       position: relative;
+      left: 5px;
 
       .ct-multiselect {
         position: absolute;
@@ -303,7 +326,10 @@ $fieldHeight: 30px;
   }
 
   .ct-report-filters {
-    background: $border-сolor;
+
+    > .ct-btn-block:nth-child(2) {
+      text-align: right;
+    }
 
     .ct-report-filters-block {
       display: inline-block;
@@ -375,17 +401,17 @@ $fieldHeight: 30px;
   .ct-button.ct-white-button {
     background: white;
     color: $nav-link-border;
-    top: 19px;
     margin-right: 8px;
   }
 
   .ct-reports-grid {
     display: inline-block;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     background-color: #ffffff;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 
     &:first-child {
-      margin-top: 72px;
+      margin-top: 70px;
     }
 
     .ui-datatable-thead:after {
@@ -401,9 +427,9 @@ $fieldHeight: 30px;
     height: 42px;
     line-height: 42px;
     font-size: 15px;
-    color: white;
     text-transform: uppercase;
-    background: #4ea5c2;
+    background: #4ea5c217 !important;
+    border-bottom: 1px solid #e1e6ed;
 
     > div {
       display: inline-block;
@@ -584,14 +610,32 @@ $fieldHeight: 30px;
   }
 }
 
+.ct-report-filters-block {
+  label {
+    display: block;
+  }
+  > div {
+    display: inline-block;
+    width: 148px !important;
+  }
+
+  > div:nth-child(3) {
+    margin: 0 15px;
+  }
+
+  .ct-select {
+    line-height: 35px;
+    padding-left: 5px;
+  }
+
+}
+
 .ct-reports-chart-container {
   width: 35%;
   position: fixed;
   display: inline-block;
   right: 20px;
-  top: 142px;
   z-index: 994;
-  background: white;
   box-sizing: border-box;
 
   img {
