@@ -136,6 +136,7 @@ $fieldHeight: 30px;
   .ct-query-block {
     position: relative;
     float: left;
+    bottom: 2px;
 
     > * {
       vertical-align: middle;
@@ -188,6 +189,7 @@ $fieldHeight: 30px;
       display: none;
       margin-left: -10px;
       font-size: 14px;
+      line-height: 19px;
     }
 
     .ct-query-text:hover + .ct-close, .ct-close:hover {
