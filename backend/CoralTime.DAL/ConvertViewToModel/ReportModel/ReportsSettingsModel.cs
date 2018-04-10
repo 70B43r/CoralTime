@@ -12,7 +12,9 @@ namespace CoralTime.DAL.ConvertViewToModel
             reportsSettings.QueryName = reportsSettingsView.QueryName;
             reportsSettings.MemberId = memberId;
 
-            reportsSettings.GroupById = reportsSettingsView.GroupById;
+            reportsSettings.IsCurrentQuery = true;
+
+            reportsSettings.GroupById = reportsSettingsView.GroupById ?? (int) Constants.ReportsGroupByIds.Date;
             reportsSettings.DateFrom = reportsSettingsView.DateFrom;
             reportsSettings.DateTo = reportsSettingsView.DateTo;
             reportsSettings.FilterProjectIds = CommonHelpers.ConvertFromArrayOfIntsToString(reportsSettingsView.ProjectIds);
@@ -24,6 +26,18 @@ namespace CoralTime.DAL.ConvertViewToModel
         public static ReportsSettings GetModel(this ReportsSettings reportsSettings, ReportsSettingsView reportsSettingsView, int memberId)
         {
             MapViewToModel(reportsSettings, reportsSettingsView, memberId);
+
+            if (reportsSettingsView.DateFrom == null && reportsSettingsView.DateTo == null && reportsSettingsView.DateStaticId == null)
+            {
+                reportsSettings.DateStaticId = (int) Constants.DatesStaticIds.Today;
+            }
+            else
+            {
+                reportsSettings.DateFrom = null;
+                reportsSettings.DateTo = null;
+                
+                reportsSettings.DateStaticId = reportsSettingsView.DateStaticId ?? (int)Constants.DatesStaticIds.Today;
+            }
 
             return reportsSettings;
         }

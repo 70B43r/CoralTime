@@ -408,6 +408,7 @@ export class ReportsComponent implements OnInit {
 		}
 
 		this.reportsSendRef.componentInstance.onSubmit.subscribe((event) => {
+			this.reportsSendRef.close();
 			this.onSubmitSendForm(event);
 		});
 	}
