@@ -12,11 +12,26 @@ $fieldHeight: 30px;
 }
 
 .ct-reports-page {
+  .ct-total-footer {
+    margin: 0 20px 40px 0 !important;
+    -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    border: none !important;
+
+    label {
+      font-weight: 700;
+    }
+    .ct-total-hours-tracked {
+      padding-left: 24px;
+    }
+  }
+
   .ct-grid-container.ct-total-time-container {
     position: relative;
     border-top: 2px solid #f1f1f1;
     border-bottom: 2px solid #f1f1f1;
-    margin: 0 0 40px;
+    margin: 0 20px 40px 0;
+    background: #ffffff;
 
     table {
       width: 100%;
@@ -36,6 +51,7 @@ $fieldHeight: 30px;
       font-size: 14px;
       color: $main-blue;
       text-transform: uppercase;
+      font-weight: 700;
     }
   }
 
@@ -51,7 +67,7 @@ $fieldHeight: 30px;
       padding: 2px 4px;
       border-radius: 5px;
       display: inline-block;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
     .ct-total-time-container {
@@ -327,15 +343,24 @@ $fieldHeight: 30px;
     }
   }
 
-  .ct-report-filters {
+  .ct-report-filters-block {
+    .ct-filter-label {
+      margin-left: 0;
+      font-family: inherit;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: $main-blue;
+      height: 18px;
+      display: block;
+    }
+  }
 
+  .ct-report-filters {
     > .ct-btn-block:nth-child(2) {
       text-align: right;
     }
 
     .ct-report-filters-block {
-      display: inline-block;
-
       &:first-child {
         margin: 0;
       }
@@ -349,15 +374,7 @@ $fieldHeight: 30px;
       }
     }
 
-    .ct-filter-label {
-      margin-left: 0;
-      font-family: inherit;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: $main-blue;
-      height: 18px;
-      display: block;
-    }
+
 
     .ui-multiselect {
       vertical-align: middle;
@@ -422,6 +439,10 @@ $fieldHeight: 30px;
       bottom: 0;
       height: 2px;
     }
+    
+    .ui-datatable-thead {
+      display: none;
+    }
   }
 
   .ct-grid-header {
@@ -447,6 +468,8 @@ $fieldHeight: 30px;
         text-overflow: ellipsis;
         white-space: nowrap;
         max-width: 400px;
+        color: $nav-link-border;
+        font-weight: 700;
       }
     }
 
@@ -489,6 +512,11 @@ $fieldHeight: 30px;
 
   .ct-grid-container {
     margin-top: 40px;
+    h3 {
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+
     .ui-datatable-tablewrapper table {
 
       thead {
@@ -509,12 +537,23 @@ $fieldHeight: 30px;
       width: 110px;
     }
     .ct-cell-client {
-      width: 90px;
+      width: 180px;
+    }
+    .ct-cell-user {
+      width: 180px;
+    }
+    .ct-cell-task {
+      width: 380px;
     }
     .ct-cell-start {
       width: 150px;
     }
 
+    .ct-cell-actual {
+      .ct-total-hours-tracked {
+        padding-left: 24px;
+      }
+    }
     //
     //.ct-cell-project, .ct-cell-client, .ct-cell-user, .ct-cell-task {
     //  width: 220px;
@@ -537,7 +576,7 @@ $fieldHeight: 30px;
 
   ct-range-datepicker {
     position: absolute;
-    top: 51px;
+    top: 31px;
     width: 280px;
     text-align: center;
     background: #fff;
@@ -639,6 +678,15 @@ $fieldHeight: 30px;
   right: 20px;
   z-index: 994;
   box-sizing: border-box;
+
+  .mat-expansion-panel-header {
+    height: 46px;
+    background: #4ea5c217 !important;
+  }
+
+  .mat-expansion-panel-body {
+    margin-top: 20px;
+  }
 
   img {
     max-width: 100%;

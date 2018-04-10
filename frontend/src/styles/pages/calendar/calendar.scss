@@ -305,6 +305,7 @@ $calendarPhoneWidth: 809px;
         .ct-calendar-time-entry-container {
           position: relative;
           cursor: pointer;
+          border-bottom: 5px solid #f2f2f2;
 
           &.ct-lock-overlay {
             .ct-calendar-time-entry-title {
@@ -537,7 +538,6 @@ $calendarPhoneWidth: 809px;
       .ct-calendar-add-task {
         display: inline-block;
         position: relative;
-        margin-top: 5px;
         height: 57px;
         width: 100%;
         opacity: 0;

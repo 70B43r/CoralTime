@@ -143,9 +143,9 @@
                                     <ct-menu-item>
                                         <a md-ripple (click)="exportAs(0)">Export as Excel</a>
                                     </ct-menu-item>
-                                    <ct-menu-item>
-                                        <a md-ripple (click)="exportAs(1)">Export as CSV</a>
-                                    </ct-menu-item>
+                                    <!--<ct-menu-item>-->
+                                        <!--<a md-ripple (click)="exportAs(1)">Export as CSV</a>-->
+                                    <!--</ct-menu-item>-->
                                     <ct-menu-item>
                                         <a md-ripple (click)="exportAs(2)">Export as PDF</a>
                                     </ct-menu-item>
@@ -157,20 +157,19 @@
 
 
                         <!--<div class="ct-query-block">-->
-                        <!--<button class="ct-select-open-button" [class.ct-disabled]="!queryItems.length">-->
-                        <!--<i class="material-icons" (click)="querySelect.toggleSelect()">more_horiz</i>-->
-                        <!--</button>-->
-                        <!--<ct-select [name]="'query'" #querySelect-->
-                        <!--[displayName]="'queryName'" [trackBy]="'queryId'"-->
-                        <!--[(ngModel)]="queryModel"-->
-                        <!--(change)="queryOnChange(queryModel)"-->
-                        <!--[options]="queryItems">-->
-                        <!--</ct-select>-->
-                        <!--<span class="ct-query-text">{{queryModel?.queryName || 'Default query'}}</span>-->
-                        <!--<span *ngIf="!queryModel" class="ct-close" (click)="openQueryDialog()">Create</span>-->
-                        <!--<span *ngIf="queryModel" class="ct-close" (click)="deleteQuery(queryModel)">Delete</span>-->
+                            <!--<button class="ct-select-open-button" [class.ct-disabled]="!queryItems.length">-->
+                                <!--<i class="material-icons" (click)="querySelect.toggleSelect()">more_horiz</i>-->
+                            <!--</button>-->
+                            <!--<ct-select [name]="'query'" #querySelect-->
+                                       <!--[displayName]="'queryName'" [trackBy]="'queryId'"-->
+                                       <!--[(ngModel)]="queryModel"-->
+                                       <!--(change)="queryOnChange(queryModel)"-->
+                                       <!--[options]="queryItems">-->
+                            <!--</ct-select>-->
+                            <!--<span class="ct-query-text">{{queryModel?.queryName || 'Default query'}}</span>-->
+                            <!--<span *ngIf="!queryModel" class="ct-close" (click)="openQueryDialog()">Create</span>-->
+                            <!--<span *ngIf="queryModel" class="ct-close" (click)="deleteQuery(queryModel)">Delete</span>-->
                         <!--</div>-->
-
 
                         <!--<div class="ct-reports-settings">-->
                         <!--<div class="ct-reports-actions-block">-->
@@ -211,28 +210,27 @@
                     </div>
                 </div>
 
-                <div *ngIf="reportsGridData?.timeTotal.timeActualTotalFor > 0" class="ct-grid-container ct-total-time-container">
+                <div *ngIf="reportsGridData?.timeTotal.timeActualTotal > 0" class="ct-grid-container ct-total-footer ct-total-time-container">
                     <label>Total</label>
                     <div class="ui-datatable-tablewrapper">
                         <table>
                             <tr>
                                 <td *ngIf="groupModel?.id != 3 && showColumnIds?.indexOf(2) > -1" class="ct-cell-date"></td>
                                 <td *ngIf="groupModel?.id != 4" class="ct-cell-client"></td>
-                                <td *ngIf="groupModel?.id != 1" class="ct-cell-project"></td>
                                 <td *ngIf="groupModel?.id != 2" class="ct-cell-user"></td>
                                 <td class="ct-cell-task"></td>
-                                <td *ngIf="showColumnIds?.indexOf(4) > -1" class="ct-cell-start"></td>
-                                <td *ngIf="showColumnIds?.indexOf(4) > -1" class="ct-cell-finish"></td>
+                                <!--<td *ngIf="showColumnIds?.indexOf(4) > -1" class="ct-cell-start"></td>-->
+                                <!--<td *ngIf="showColumnIds?.indexOf(4) > -1" class="ct-cell-finish"></td>-->
 
-                                <td class="ct-cell-actual">
-                                    <div class="ct-total-hours-tracked">
-                                        <span>{{getTimeString(reportsGridData?.timeTotal.timeActualTotalFor, true)}}</span>
-                                    </div>
-                                </td>
+                                <!--<td class="ct-cell-actual">-->
+                                    <!--<div class="ct-total-hours-tracked">-->
+                                        <!--<span>{{getTimeString(reportsGridData?.timeTotal.timeActualTotal, true)}}</span>-->
+                                    <!--</div>-->
+                                <!--</td>-->
 
-                                <td *ngIf="showColumnIds?.indexOf(1) > -1" class="ct-cell-estimated">
-                                    <div class="ct-total-hours-planned" *ngIf="showColumnIds?.indexOf(1) > -1">
-                                        <span>{{getTimeString(reportsGridData?.timeTotal.timeEstimatedTotalFor)}}</span>
+                                <td *ngIf="showColumnIds?.indexOf(1) > -1" class="ct-cell-start">
+                                    <div class="ct-total-hours-tracked" *ngIf="showColumnIds?.indexOf(1) > -1">
+                                        <span>{{getTimeString(reportsGridData?.timeTotal.timeActualTotal, true)}}</span>
                                     </div>
                                 </td>
 
